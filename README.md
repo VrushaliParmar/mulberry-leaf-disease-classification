@@ -151,3 +151,39 @@ The final dataset split was:
 70% → Training
 15% → Validation
 15% → Testing
+
+```markdown
+# 🏗️ Model Architecture
+
+The final model uses **MobileNetV2 with ImageNet-pretrained weights**.
+
+### Architecture Flow
+
+```text
+Input Image
+     │
+     ▼
+Resize to 224 × 224
+     │
+     ▼
+Data Augmentation
+     │
+     ▼
+MobileNetV2
+(ImageNet Pretrained)
+     │
+     ▼
+Global Average Pooling
+     │
+     ▼
+Dropout (0.3)
+     │
+     ▼
+Dense Layer
+3 Output Classes
+     │
+     ▼
+Softmax
+     │
+     ▼
+Class Prediction
